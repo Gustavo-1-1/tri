@@ -945,11 +945,11 @@ export default function App() {
 
                       {/* 2. Text Row 1 */}
                       <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: '1fr 1fr 1fr',
-                        gap: '20px',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        gap: '40px',
                         padding: '60px 40px',
-                        alignItems: 'start'
+                        alignItems: 'flex-start'
                       }}>
                         {/* Left: Title */}
                         <div style={{
@@ -959,19 +959,25 @@ export default function App() {
                           fontWeight: '400',
                           textDecoration: 'underline',
                           textUnderlineOffset: '4px',
-                          textTransform: 'uppercase'
+                          textTransform: 'uppercase',
+                          flex: '0 0 auto'
                         }}>
                           {selectedProject.title}
                         </div>
 
                         {/* Center: Category */}
                         <div style={{
-                          textAlign: 'center',
                           fontFamily: "'Space Grotesk', sans-serif",
                           fontSize: '30px',
                           fontWeight: '400',
-                          lineHeight: '1',
-                          color: '#fff'
+                          lineHeight: '64px',
+                          color: '#fff',
+                          maxWidth: '300px',
+                          width: '300px',
+                          minHeight: '64px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center'
                         }}>
                           {selectedProject.category}
                         </div>
@@ -981,7 +987,10 @@ export default function App() {
                           fontFamily: "'Archivo', sans-serif",
                           fontSize: '15px',
                           lineHeight: '1.2',
-                          color: '#fff'
+                          color: '#fff',
+                          maxWidth: '280px',
+                          width: '280px',
+                          minHeight: '143px'
                         }}>
                           <span style={{ color: '#00BFFF', marginRight: '8px', verticalAlign: 'middle' }}>●</span>
                           <span style={{ verticalAlign: 'middle' }}>
@@ -1017,25 +1026,41 @@ export default function App() {
 
                       {/* 5. Text Row 2 (About + System Note) */}
                       <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: '1fr 1fr',
+                        display: 'flex',
+                        justifyContent: 'space-between',
                         gap: '40px',
                         padding: '80px 40px',
-                        alignItems: 'start'
+                        alignItems: 'flex-start'
                       }}>
                         {/* Left: About */}
-                        <div style={{ display: 'flex', gap: '30px' }}>
-                          <span style={{ fontFamily: "'Archivo', sans-serif", fontWeight: '700', fontSize: '15px', width: '50px' }}>about</span>
-                          <p style={{ fontFamily: "'Archivo', sans-serif", fontSize: '15px', lineHeight: '1.2', margin: 0, paddingRight: '20px' }}>
+                        <div style={{ display: 'flex', gap: '30px', alignItems: 'flex-start' }}>
+                          <span style={{ fontFamily: "'Archivo', sans-serif", fontWeight: '700', fontSize: '15px', minWidth: '50px' }}>about</span>
+                          <p style={{
+                            fontFamily: "'Archivo', sans-serif",
+                            fontSize: '15px',
+                            lineHeight: '1.2',
+                            margin: 0,
+                            maxWidth: '280px',
+                            width: '280px',
+                            minHeight: '191px'
+                          }}>
                             {selectedProject.about}
                           </p>
                         </div>
 
                         {/* Right: System Note */}
-                        <div style={{ paddingLeft: '10%' }}>
-                          <div style={{ display: 'flex', gap: '15px' }}>
+                        <div style={{ flex: '1', display: 'flex', justifyContent: 'flex-end' }}>
+                          <div style={{ display: 'flex', gap: '15px', alignItems: 'flex-start' }}>
                             <span style={{ color: '#00BFFF', fontSize: '10px', marginTop: '4px' }}>●</span>
-                            <span style={{ fontFamily: "'Archivo', sans-serif", fontSize: '15px', lineHeight: '1.2' }}>
+                            <span style={{
+                              fontFamily: "'Archivo', sans-serif",
+                              fontSize: '15px',
+                              lineHeight: '1.2',
+                              maxWidth: '280px',
+                              width: '280px',
+                              minHeight: '95px',
+                              display: 'block'
+                            }}>
                               {selectedProject.systemNote}
                             </span>
                           </div>
