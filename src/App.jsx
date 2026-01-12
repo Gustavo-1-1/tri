@@ -173,62 +173,84 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const RenderFooter = () => (
-    <footer style={{
-      width: '100%',
-      padding: '40px 40px 20px 40px', // Adjusted padding for bottom alignment visual
-      borderTop: `1px solid ${darkMode ? '#333' : '#ddd'}`,
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'flex-end', // Align bottom
-      backgroundColor: bgColor,
-      color: textColor,
-      position: 'relative',
-      zIndex: 10
-    }}>
-      <img
-        src="/tri-monograma_1.png"
-        alt="TRI"
-        style={{
-          height: '42px',
-          width: 'auto',
-          display: 'block',
-          filter: darkMode ? 'none' : 'invert(1)',
-          marginBottom: '0'
-        }}
-      />
+  const RenderFooter = () => {
+    const handleFooterPrev = () => {
+      if (currentView === 'cv') {
+        setCurrentCVPage(Math.max(1, currentCVPage - 1));
+      } else if (selectedProject) {
+        const currentIndex = projects.findIndex(p => p.id === selectedProject.id);
+        const prevIndex = currentIndex > 0 ? currentIndex - 1 : projects.length - 1;
+        handleProjectClick(projects[prevIndex]);
+      }
+    };
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '30px' }}>
-        <a
-          href="mailto:tri.solsoto@gmail.com"
+    const handleFooterNext = () => {
+      if (currentView === 'cv') {
+        setCurrentCVPage(Math.min(totalCVPages, currentCVPage + 1));
+      } else if (selectedProject) {
+        const currentIndex = projects.findIndex(p => p.id === selectedProject.id);
+        const nextIndex = currentIndex < projects.length - 1 ? currentIndex + 1 : 0;
+        handleProjectClick(projects[nextIndex]);
+      }
+    };
+
+    return (
+      <footer style={{
+        width: '100%',
+        padding: '40px 40px 20px 40px', // Adjusted padding for bottom alignment visual
+        borderTop: `1px solid ${darkMode ? '#333' : '#ddd'}`,
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'flex-end', // Align bottom
+        backgroundColor: bgColor,
+        color: textColor,
+        position: 'relative',
+        zIndex: 10
+      }}>
+        <img
+          src="/tri-monograma_1.png"
+          alt="TRI"
           style={{
-            color: textColor,
-            textDecoration: 'underline',
-            fontSize: '13px',
-            textUnderlineOffset: '4px'
+            height: '42px',
+            width: 'auto',
+            display: 'block',
+            filter: darkMode ? 'none' : 'invert(1)',
+            marginBottom: '0'
           }}
-        >
-          tri.solsoto@gmail.com
-        </a>
+        />
 
-        <div style={{ display: 'flex', gap: '0' }}>
-          <div className="arrow-btn">←</div>
-          <div className="arrow-btn">→</div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '30px' }}>
+          <a
+            href="mailto:tri.solsoto@gmail.com"
+            style={{
+              color: textColor,
+              textDecoration: 'underline',
+              fontSize: '13px',
+              textUnderlineOffset: '4px'
+            }}
+          >
+            tri.solsoto@gmail.com
+          </a>
+
+          <div style={{ display: 'flex', gap: '0' }}>
+            <div className="arrow-btn" onClick={handleFooterPrev}>←</div>
+            <div className="arrow-btn" onClick={handleFooterNext}>→</div>
+          </div>
+
+          <div
+            className="toggle-btn"
+            style={{ backgroundColor: textColor }}
+            onClick={() => setDarkMode(!darkMode)}
+          />
         </div>
 
-        <div
-          className="toggle-btn"
-          style={{ backgroundColor: textColor }}
-          onClick={() => setDarkMode(!darkMode)}
-        />
-      </div>
-
-      <div style={{ textAlign: 'right', fontSize: '12px', opacity: 0.8 }}>
-        <div>Graphic Design, Art Direction</div>
-        <div>Buenos Aires, 2025</div>
-      </div>
-    </footer>
-  );
+        <div style={{ textAlign: 'right', fontSize: '12px', opacity: 0.8 }}>
+          <div>Graphic Design, Art Direction</div>
+          <div>Buenos Aires, 2025</div>
+        </div>
+      </footer>
+    );
+  };
 
   return (
     <div style={{
@@ -875,59 +897,7 @@ export default function App() {
               />
             </div>
 
-            {/* Navigation Controls */}
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '20px',
-              marginBottom: '30px'
-            }}>
-              <button
-                onClick={() => setCurrentCVPage(Math.max(1, currentCVPage - 1))}
-                disabled={currentCVPage === 1}
-                className="arrow-btn"
-                style={{
-                  padding: '12px 24px',
-                  backgroundColor: currentCVPage === 1 ? 'transparent' : textColor,
-                  color: currentCVPage === 1 ? textColor : bgColor,
-                  border: `1px solid ${textColor}`,
-                  cursor: currentCVPage === 1 ? 'not-allowed' : 'pointer',
-                  fontSize: '13px',
-                  fontWeight: 500,
-                  opacity: currentCVPage === 1 ? 0.3 : 1,
-                  transition: 'all 0.3s'
-                }}
-              >
-                ← PREVIOUS PAGE
-              </button>
 
-              <span style={{
-                fontSize: '13px',
-                fontWeight: 500,
-                letterSpacing: '0.05em'
-              }}>
-                {currentCVPage} / {totalCVPages}
-              </span>
-
-              <button
-                onClick={() => setCurrentCVPage(Math.min(totalCVPages, currentCVPage + 1))}
-                disabled={currentCVPage === totalCVPages}
-                className="arrow-btn"
-                style={{
-                  padding: '12px 24px',
-                  backgroundColor: currentCVPage === totalCVPages ? 'transparent' : textColor,
-                  color: currentCVPage === totalCVPages ? textColor : bgColor,
-                  border: `1px solid ${textColor}`,
-                  cursor: currentCVPage === totalCVPages ? 'not-allowed' : 'pointer',
-                  fontSize: '13px',
-                  fontWeight: 500,
-                  opacity: currentCVPage === totalCVPages ? 0.3 : 1,
-                  transition: 'all 0.3s'
-                }}
-              >
-                NEXT PAGE →
-              </button>
-            </div>
 
             {/* Download Button */}
             <a
