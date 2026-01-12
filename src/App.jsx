@@ -43,9 +43,10 @@ const projects = [
   },
   {
     id: 'calm',
-    title: 'CALM.',
-    category: 'Branding, Wellness',
-    description: 'Brand identity for calm. wellness brand.',
+    title: 'calm.',
+    category: 'Branding',
+    description: 'Calm is an Argentine brand focused on products that promote better sleep and relaxation. As a graphic designer, I created a variety of visual assets for social media and the physical store, always ensuring brand consistency and visual harmony.',
+    systemNote: 'Designs for RRSS, Street advertisemnt',
     images: ['calm'],
     color: '#FFB800',
     size: 'medium'
@@ -53,36 +54,43 @@ const projects = [
   {
     id: 'margot',
     title: 'MARGOT',
-    category: 'Branding, Fashion',
-    description: 'Brand identity and visual system for MARGOT fashion brand.',
+    category: 'Branding',
+    description: 'Margot is an Argentine design brand that specializes in creating timeless handbags and accessories. All of its products are thoughtfully crafted to ensure they are original, classic and functional. Each item is handmade in workshops across Argentina, where artisans use traditional techniques and noble materials to guarantee maximum durability.',
+    about: 'The client sought a timeless logo to reflect their products\' enduring nature, designed to transcend the disposable trends of fast fashion. For this Capsule Logo, the objective was to create a design that felt fresh, harmonized seamlessly with the existing branding, and stood out as a signature element for the spring-summer season.',
+    systemNote: 'Margot\'s essence lies in balancing contrasts: blending softness with rigidity, the amorphous with perfect symmetry, and the ethereal quality of air with the solidity of concrete.',
     images: ['margot'],
     color: '#E63946',
     size: 'medium'
   },
   {
     id: 'yuki',
-    title: 'YUKI',
-    category: 'Branding, Cultural',
-    description: 'YUKI es una vidriera constante de proyectos con impacto creativo y cultural que desde 2015 no paró de crecer.',
+    title: 'YUKI at FINA Revista',
+    category: 'Branding, Editorial Design',
+    description: 'FINA is an Argentine magazine showcasing cutting-edge art, design, and contemporary culture. With striking visuals and a focus on emerging talent, it highlights innovative creations, artist interviews, and cultural analysis, making it a key reference in the local and international creative scene.',
+    about: 'The crossover between YUKI, an Argentine creative agency, and FINA, an Argentine art and culture magazine, represents a unique collaboration blending innovative design and contemporary cultural expression. Together, they combine YUKI\'s expertise in branding, visual storytelling, and creative strategy with FINA\'s deep connection to cutting-edge art, design, and emerging talent.',
+    systemNote: 'This partnership elevates both brands, creating projects that push artistic boundaries while showcasing the best of Argentina\'s creative scene.',
     images: ['yuki'],
-    color: '#FFE500',
+    color: '#000',
     size: 'medium'
   },
   {
     id: 'oddmami',
-    title: 'ODD MAMI',
-    category: 'Album Art, Music',
-    description: 'Album artwork and visual identity for Odd Mami.',
+    title: 'ODD MAMI ID CONCERT',
+    category: 'Artist ID',
+    description: 'Odd Mami is an artist who constantly navigates between the alternative and pop scenes, reinventing herself and building an intimate connection with her audience through sounds that resonate with memory and collective emotions. She is represented by Bohemian Groove Corporation.',
+    about: 'In this ID design for her show at Niceto, the visuals complement Odd Mami\'s dreamlike world—one that remains deeply rooted in a dark reality. They blend elements of fantasy and sensitivity, delicately steering toward a softly haunting, shadowy atmosphere.',
     images: ['oddmami'],
     color: '#1a1a1a',
     size: 'medium'
   },
   {
-    id: 'expediciones',
-    title: 'EXPEDICIONES',
-    category: 'Packaging, Branding',
-    description: 'Serie 1 | 1700 MSNM - Edición Limitada 400 Botellas',
-    images: ['expediciones'],
+    id: 'bosque',
+    title: 'Bosque Gin',
+    category: 'Packaging Design, Branding',
+    description: 'Bosque Gin is an Argentine craft gin brand inspired by the native forests of Patagonia. It combines carefully selected botanicals with pure mountain water to create a premium spirit that reflects the natural richness and complexity of the region. Each bottle is a tribute to the wild landscapes of the south, blending tradition, craftsmanship, and a deep respect for nature.',
+    about: 'Expediciones is a special edition by Bosque Gin that celebrates the spirit of exploration and adventure in the wild landscapes of Patagonia. The concept pays tribute to those who venture off the beaten path, connecting with nature in its most raw and inspiring form.',
+    systemNote: 'I designed the packaging for this edition, focusing on the label and overall visual identity. My goal was to reflect the essence of the Expediciones concept while staying true to Bosque Gin\'s core branding.',
+    images: ['bosque'],
     color: '#F5F5DC',
     size: 'medium'
   },
@@ -178,7 +186,16 @@ export default function App() {
       position: 'relative',
       zIndex: 10
     }}>
-      <span className="logo-text" style={{ fontSize: '48px' }}>TRI</span>
+      <img
+        src="/tri-monograma_1.png"
+        alt="TRI"
+        style={{
+          height: '48px',
+          width: 'auto',
+          display: 'block',
+          filter: darkMode ? 'invert(1)' : 'none'
+        }}
+      />
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '30px' }}>
         <a
@@ -501,14 +518,14 @@ export default function App() {
               <div style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(2, 1fr)',
-                gap: '2px',
+                gap: '0px',
                 backgroundColor: darkMode ? '#222' : '#ddd'
               }}>
                 {/* WOS */}
                 <div
                   className="project-card"
                   style={{
-                    aspectRatio: '1',
+                    aspectRatio: '1.6',
                     background: getProjectImage(projects[0]),
                     position: 'relative'
                   }}
@@ -531,7 +548,7 @@ export default function App() {
                 <div
                   className="project-card"
                   style={{
-                    aspectRatio: '1',
+                    aspectRatio: '1.6',
                     position: 'relative',
                     display: 'flex',
                     alignItems: 'center',
@@ -552,7 +569,7 @@ export default function App() {
                 <div
                   className="project-card"
                   style={{
-                    aspectRatio: '1',
+                    aspectRatio: '1.6',
                     position: 'relative'
                   }}
                   onClick={() => handleProjectClick(projects[2])}
@@ -575,7 +592,7 @@ export default function App() {
                 <div
                   className="project-card fade-in fade-in-delay-4"
                   style={{
-                    aspectRatio: '1',
+                    aspectRatio: '1.6',
                     background: getProjectImage(projects[3]),
                     position: 'relative',
                     display: 'flex',
@@ -607,24 +624,30 @@ export default function App() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    aspectRatio: '2'
+                    aspectRatio: '1.6'
                   }}
                   onClick={() => handleProjectClick(projects[4])}
                 >
-                  <span style={{
-                    fontSize: '48px',
-                    fontWeight: 500,
-                    color: '#fff'
-                  }}>
-                    calm.
-                  </span>
+                  <img
+                    src="/calm/calm.png"
+                    alt="calm."
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }} // 'contain' might be better for a logo, but 'cover' fills the tile. User said "la imagen", assuming full tile.
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.parentElement.style.background = getProjectImage(projects[4]);
+                    }}
+                  />
+                  {/* Overlay omitted if image is logo/text itself, but might want hover effect. Keeping clean image as per request "esa imagen la quiero en el menu". */}
+                  <div className="project-overlay">
+                    <span style={{ fontSize: '32px', fontWeight: 500, color: '#fff' }}>calm.</span>
+                  </div>
                 </div>
 
                 <div
                   className="project-card"
                   style={{
                     position: 'relative',
-                    aspectRatio: '2'
+                    aspectRatio: '1.6'
                   }}
                   onClick={() => handleProjectClick(projects[5])}
                 >
@@ -647,7 +670,7 @@ export default function App() {
                   className="project-card"
                   style={{
                     position: 'relative',
-                    aspectRatio: '1.5'
+                    aspectRatio: '1.6'
                   }}
                   onClick={() => handleProjectClick(projects[6])}
                 >
@@ -669,7 +692,7 @@ export default function App() {
                   className="project-card"
                   style={{
                     position: 'relative',
-                    aspectRatio: '1.5',
+                    aspectRatio: '1.6',
                     backgroundColor: '#1a1a1a'
                   }}
                   onClick={() => handleProjectClick(projects[7])}
@@ -698,34 +721,21 @@ export default function App() {
                   style={{
                     background: '#F5F5DC',
                     position: 'relative',
-                    aspectRatio: '1.5',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
+                    aspectRatio: '1.6',
                   }}
                   onClick={() => handleProjectClick(projects[8])}
                 >
-                  <div style={{ textAlign: 'center', color: '#333', padding: '40px' }}>
-                    <div style={{
-                      fontSize: '36px',
-                      fontWeight: 'bold',
-                      color: '#2A9D8F',
-                      marginBottom: '15px'
-                    }}>
-                      EXPEDICIONES
-                    </div>
-                    <div style={{
-                      fontSize: '14px',
-                      padding: '5px 15px',
-                      border: '1px solid #333',
-                      display: 'inline-block',
-                      marginBottom: '10px'
-                    }}>
-                      SERIE 1 | 1700 MSNM
-                    </div>
-                    <div style={{ fontSize: '12px' }}>
-                      EDICIÓN LIMITADA<br />400 BOTELLAS
-                    </div>
+                  <img
+                    src="/bosque/d3a7edf1713e1c1344837e4a7a30247bf5c4ddca.jpg"
+                    alt="Bosque"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.parentElement.style.background = getProjectImage(projects[8]);
+                    }}
+                  />
+                  <div className="project-overlay">
+                    <span style={{ fontSize: '24px', fontWeight: 'bold', color: '#fff' }}>BOSQUE</span>
                   </div>
                 </div>
 
@@ -734,7 +744,7 @@ export default function App() {
                   style={{
                     background: '#000',
                     position: 'relative',
-                    aspectRatio: '1.5',
+                    aspectRatio: '1.6',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center'
@@ -1007,19 +1017,28 @@ export default function App() {
                         <img src="/spotify/gif-1.gif" alt="Content" style={{ width: '100%', height: '100%', objectFit: 'fill' }} />
                       </div>
                     </div>
-                  ) : selectedProject.id === 'kosice' ? null : (
-                    <div style={{
-                      height: '60vh',
-                      background: getProjectImage(selectedProject),
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center'
-                    }}>
-                      <span className="logo-text" style={{ fontSize: '64px' }}>
-                        {selectedProject.title}
-                      </span>
-                    </div>
-                  )}
+                  ) : (selectedProject.id === 'kosice' || selectedProject.id === 'calm' || selectedProject.id === 'oddmami' || selectedProject.id === 'bosque') ? null :
+                    selectedProject.id === 'margot' ? (
+                      <div style={{ width: '100%', height: 'auto', backgroundColor: '#fff' }}>
+                        <img src="/margot/79aba033434e8daab6c44b0b4b95e4c3029d4035.png" alt="Margot Header" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                      </div>
+                    ) : selectedProject.id === 'yuki' ? (
+                      <div style={{ width: '100%', height: 'auto', backgroundColor: '#e8e800' }}>
+                        <img src="/yuki/f0a03ec6dd0e7dae151932c76af58cf42840e881.jpg" alt="Yuki Header" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                      </div>
+                    ) : (
+                      <div style={{
+                        height: '60vh',
+                        background: getProjectImage(selectedProject),
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }}>
+                        <span className="logo-text" style={{ fontSize: '64px' }}>
+                          {selectedProject.title}
+                        </span>
+                      </div>
+                    )}
                 </div>
                 {/* Project Info */}
                 <div style={{
@@ -1203,6 +1222,98 @@ export default function App() {
                           Download Full PDF
                         </a>
                       </div>
+                    </div>
+                  </div>
+                )}
+                {selectedProject.id === 'calm' && (
+                  <div style={{ backgroundColor: '#000', paddingBottom: '0' }}>
+                    {/* Row 1: 3 Cols */}
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2px' }}>
+                      <img src="/calm/6d8f047298bc6a6b629725c6c0daca4bc436d478.png" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      <img src="/calm/751db91f24aea72ad8487b9a8d07d2bb5f286639.png" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      <img src="/calm/b1c1cd19a49ddf83f0f35c2a6e8ca06d0a04a1a4.png" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    </div>
+                    {/* Row 2: 4 Cols */}
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2px', marginTop: '2px' }}>
+                      <img src="/calm/0fc77bbeacf36cf23590e1b42c7dcb11cca637f3.gif" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      <img src="/calm/59573f57b189e5b8ab24ab1815da56d308c99df6.png" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      <img src="/calm/5d381e9d1d4acf3bcb4fc4a745ecf6d495a35b8b.png" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      <img src="/calm/f642d6443e8814ba65d7d9d343884814ab87ae01.gif" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    </div>
+                    {/* Row 3: 2 Cols */}
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2px', marginTop: '2px' }}>
+                      <img src="/calm/6c046720a56cfa1c2f01bc4e8e0c59688fc19ad2.png" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      <img src="/calm/81c11aa80ac0f28972146ccab8961ee3eae2ee22.gif" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    </div>
+                  </div>
+                )}
+
+                {selectedProject.id === 'margot' && (
+                  <div style={{ backgroundColor: '#000', color: '#fff' }}>
+                    {/* Logo Strip */}
+                    <div style={{ width: '100%', overflow: 'hidden', padding: '0' }}>
+                      {/* Assuming text based on screenshot for scalability and clarity */}
+                      <div style={{ fontSize: '15vw', lineHeight: 0.8, fontWeight: '300', textAlign: 'center', letterSpacing: '-0.05em', margin: '40px 0', fontFamily: 'sans-serif' }}>MARGOT</div>
+                    </div>
+
+                    {/* Grid 1: 2 Cols */}
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0' }}>
+                      <img src="/margot/a05e4930afa77d3702bd3d5497c78054652dff7d.png" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      <img src="/margot/6e146dc5a297ff47fc74f3a09a3001c1e7d487c5.png" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    </div>
+
+                    {/* Grid 2: 3 Cols */}
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0' }}>
+                      <img src="/margot/17554dace82ed21c09d69875e7155ba31333391a.png" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      <img src="/margot/a552e7ce4ef9e8d73649ceaf3b013cb77931d4fa.png" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      <img src="/margot/8f8d5ba7c194343e17ae7b8dca13a71520a2e7bb.png" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    </div>
+
+                    {/* Footer Image */}
+                    <img src="/margot/5cf233d307c8d82b54f3c749118474ed2153aad3.png" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                  </div>
+                )}
+
+                {selectedProject.id === 'yuki' && (
+                  <div style={{ backgroundColor: '#e8e800' }}>
+                    <img src="/yuki/e9cd2fe6e221aa371223af4270d03b8ab02a80a3.gif" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                  </div>
+                )}
+
+                {selectedProject.id === 'oddmami' && (
+                  <div style={{ backgroundColor: '#000', color: '#fff' }}>
+                    {/* Header Collage */}
+                    <img src="/oddmami/5cac4b2a4593039674312562131c36c88124e1f6.png" style={{ width: '100%', height: 'auto', display: 'block' }} />
+
+                    {/* Grid 1: 4/1 strip */}
+                    <div style={{ width: '100%', marginTop: '5px' }}>
+                      {/* Assuming this is one wide image provided as the strip */}
+                      <img src="/oddmami/f1433f30813bd2129de7242dc2f0c0e7fd900435.png" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                    </div>
+
+                    {/* Grid 2: 2 Cols */}
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5px', marginTop: '5px' }}>
+                      <img src="/oddmami/c9a9eabb002d560a2d0cda87105d6494fb8a8f5f.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      <img src="/oddmami/16b6579ab09ff002fb6913e3fc129f6b78bf0309.png" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    </div>
+                  </div>
+                )}
+
+                {selectedProject.id === 'bosque' && (
+                  <div style={{ backgroundColor: '#fff', color: '#000' }}>
+                    {/* Header Map */}
+                    <img src="/bosque/d3a7edf1713e1c1344837e4a7a30247bf5c4ddca.jpg" style={{ width: '100%', height: 'auto', display: 'block' }} />
+
+                    {/* Grid 1: 2 Cols (3 Cans | Bottle) */}
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0' }}>
+                      <img src="/bosque/96776266c208c3d0175841f3151ce9bf0d9fabd9.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      <img src="/bosque/7a792ce5aaa15034f6c04be8975911f98dee2e8d.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    </div>
+
+                    {/* Grid 2: 2 Cols (Bottle/Rock | Collage) */}
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0' }}>
+                      <img src="/bosque/0975d761126cdd93152739a71f04eefbf76f6b50.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      <img src="/bosque/2234487e9a23d98fd1a6838718e4aa87a8348943.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
                   </div>
                 )}
