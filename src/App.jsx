@@ -1269,12 +1269,12 @@ export default function App() {
                     {/* Row 1: #2 (white La Cruda) + #1 (blue Éxitos large) */}
                     <div style={{ display: 'flex', gap: '2px' }}>
                       <img
-                        src="/spotify/gif-2.gif"
+                        src="/spotify/2.gif"
                         alt="La Cruda"
                         style={{ width: '396px', height: '223px', objectFit: 'cover' }}
                       />
                       <img
-                        src="/spotify/gif-1.gif"
+                        src="/spotify/1.gif"
                         alt="Éxitos Argentina"
                         style={{ width: '798px', height: '449px', objectFit: 'cover' }}
                       />
@@ -1283,7 +1283,7 @@ export default function App() {
                     {/* Row 2: #3 (purple banner) + #6 (black placeholder) */}
                     <div style={{ display: 'flex', gap: '2px', marginTop: '2px' }}>
                       <img
-                        src="/spotify/gif-3.gif"
+                        src="/spotify/3.gif"
                         alt="La Cruda banner"
                         style={{ width: '603px', height: '110px', objectFit: 'cover' }}
                       />
@@ -1294,12 +1294,12 @@ export default function App() {
                     <div style={{ display: 'flex', gap: '2px', marginTop: '2px' }}>
                       <div style={{ width: '430px', height: '174px', backgroundColor: '#000' }}></div>
                       <img
-                        src="/spotify/gif-4.gif"
+                        src="/spotify/4.gif"
                         alt="Éxitos Argentina"
                         style={{ width: '431px', height: '174px', objectFit: 'cover' }}
                       />
                       <img
-                        src="/spotify/gif-5.gif"
+                        src="/spotify/5.gif"
                         alt="La Cruda"
                         style={{ width: '333px', height: '174px', objectFit: 'cover' }}
                       />
@@ -1308,12 +1308,12 @@ export default function App() {
                     {/* Billboard Photos */}
                     <div style={{ display: 'flex', gap: '2px', marginTop: '2px' }}>
                       <img
-                        src="/spotify/billboard-1.png"
+                        src="/spotify/8.png"
                         alt="Billboard Buenos Aires"
                         style={{ width: '50%', height: 'auto', objectFit: 'cover' }}
                       />
                       <img
-                        src="/spotify/billboard-2.png"
+                        src="/spotify/9.png"
                         alt="Billboard Street"
                         style={{ width: '50%', height: 'auto', objectFit: 'cover' }}
                       />
