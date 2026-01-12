@@ -982,20 +982,27 @@ export default function App() {
                           {selectedProject.category}
                         </div>
 
-                        {/* Right: Description */}
-                        <div style={{
-                          fontFamily: "'Archivo', sans-serif",
-                          fontSize: '15px',
-                          lineHeight: '1.2',
-                          color: '#fff',
-                          maxWidth: '280px',
-                          width: '280px',
-                          minHeight: '143px'
-                        }}>
-                          <span style={{ color: '#00BFFF', marginRight: '8px', verticalAlign: 'middle' }}>●</span>
-                          <span style={{ verticalAlign: 'middle' }}>
+                        {/* Right: Description - Bullet OUTSIDE box */}
+                        <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                          <div style={{
+                            width: '8px',
+                            height: '8px',
+                            borderRadius: '50%',
+                            backgroundColor: '#00BFFF',
+                            marginTop: '6px',
+                            flexShrink: 0
+                          }} />
+                          <div style={{
+                            fontFamily: "'Archivo', sans-serif",
+                            fontSize: '15px',
+                            lineHeight: '1.2',
+                            color: '#fff',
+                            maxWidth: '280px',
+                            width: '280px',
+                            minHeight: '143px'
+                          }}>
                             {selectedProject.description}
-                          </span>
+                          </div>
                         </div>
                       </div>
 
@@ -1024,7 +1031,7 @@ export default function App() {
                         style={{ width: '100%', height: 'auto', display: 'block', marginTop: '2px' }}
                       />
 
-                      {/* 5. Text Row 2 (About + System Note) */}
+                      {/* 5. Text Row 2 (About + System Note) - About aligned with Category center */}
                       <div style={{
                         display: 'flex',
                         justifyContent: 'space-between',
@@ -1032,8 +1039,11 @@ export default function App() {
                         padding: '80px 40px',
                         alignItems: 'flex-start'
                       }}>
-                        {/* Left: About */}
-                        <div style={{ display: 'flex', gap: '30px', alignItems: 'flex-start' }}>
+                        {/* Spacer to push 'about' to center alignment with Category */}
+                        <div style={{ flex: '0 0 auto', width: 'auto' }}></div>
+
+                        {/* Center: About - aligned with Category box */}
+                        <div style={{ display: 'flex', gap: '30px', alignItems: 'flex-start', flex: '0 0 auto' }}>
                           <span style={{ fontFamily: "'Archivo', sans-serif", fontWeight: '700', fontSize: '15px', minWidth: '50px' }}>about</span>
                           <p style={{
                             fontFamily: "'Archivo', sans-serif",
@@ -1048,21 +1058,25 @@ export default function App() {
                           </p>
                         </div>
 
-                        {/* Right: System Note */}
-                        <div style={{ flex: '1', display: 'flex', justifyContent: 'flex-end' }}>
-                          <div style={{ display: 'flex', gap: '15px', alignItems: 'flex-start' }}>
-                            <span style={{ color: '#00BFFF', fontSize: '10px', marginTop: '4px' }}>●</span>
-                            <span style={{
-                              fontFamily: "'Archivo', sans-serif",
-                              fontSize: '15px',
-                              lineHeight: '1.2',
-                              maxWidth: '280px',
-                              width: '280px',
-                              minHeight: '95px',
-                              display: 'block'
-                            }}>
-                              {selectedProject.systemNote}
-                            </span>
+                        {/* Right: System Note - Bullet OUTSIDE box */}
+                        <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start', flex: '0 0 auto' }}>
+                          <div style={{
+                            width: '8px',
+                            height: '8px',
+                            borderRadius: '50%',
+                            backgroundColor: '#00BFFF',
+                            marginTop: '6px',
+                            flexShrink: 0
+                          }} />
+                          <div style={{
+                            fontFamily: "'Archivo', sans-serif",
+                            fontSize: '15px',
+                            lineHeight: '1.2',
+                            maxWidth: '280px',
+                            width: '280px',
+                            minHeight: '95px'
+                          }}>
+                            {selectedProject.systemNote}
                           </div>
                         </div>
                       </div>
