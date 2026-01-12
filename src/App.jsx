@@ -1085,27 +1085,6 @@ export default function App() {
                     <div style={{ width: '100%', height: 'auto', backgroundColor: '#000' }}>
                       <img src="/tina/0f1406e6b8ea529f581b812b08ee9f2a3ef066d7.gif" alt="Tina Hero" style={{ width: '100%', height: 'auto', display: 'block' }} />
                     </div>
-                  ) : selectedProject.id === 'spotify' ? (
-                    <div style={{ display: 'grid', gap: '2px', backgroundColor: '#000' }}>
-                      {/* Row 1 */}
-                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2px' }}>
-                        <img src="/spotify/gif-1.gif" alt="Content" style={{ width: '100%', height: '100%', objectFit: 'fill' }} />
-                        <img src="/spotify/gif-3.gif" alt="Content" style={{ width: '100%', height: '100%', objectFit: 'fill' }} />
-                      </div>
-
-                      {/* Row 2 */}
-                      <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '2px' }}>
-                        <img src="/spotify/gif-2.gif" alt="Content" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                        <img src="/spotify/gif-5.gif" alt="Content" style={{ width: '100%', height: '100%', objectFit: 'contain', backgroundColor: '#000' }} />
-                      </div>
-
-                      {/* Row 3 */}
-                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr 1fr', gap: '2px' }}>
-                        <img src="/spotify/gif-6.gif" alt="Content" style={{ width: '100%', height: '100%', objectFit: 'contain', backgroundColor: '#000' }} />
-                        <img src="/spotify/gif-4.gif" alt="Content" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                        <img src="/spotify/gif-1.gif" alt="Content" style={{ width: '100%', height: '100%', objectFit: 'fill' }} />
-                      </div>
-                    </div>
                   ) : (selectedProject.id === 'kosice' || selectedProject.id === 'calm' || selectedProject.id === 'oddmami' || selectedProject.id === 'bosque') ? null :
                     selectedProject.id === 'margot' ? (
                       <div style={{ width: '100%', height: 'auto', backgroundColor: '#fff' }}>
