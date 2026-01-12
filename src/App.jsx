@@ -1265,9 +1265,53 @@ export default function App() {
                 )}
 
                 {selectedProject.id === 'spotify' && (
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2px', paddingBottom: '0' }}>
-                    <img src="/spotify/billboard-1.png" style={{ width: '100%', height: 'auto', objectFit: 'contain', display: 'block' }} />
-                    <img src="/spotify/billboard-2.png" style={{ width: '100%', height: 'auto', objectFit: 'contain', display: 'block' }} />
+                  <div style={{ backgroundColor: '#000', padding: '0' }}>
+                    {/* Row 1: 396×223 + 798×449 */}
+                    <div style={{ display: 'flex', gap: '2px' }}>
+                      <img
+                        src="/spotify/396x223.gif"
+                        alt="Spotify Animation 1"
+                        style={{ width: '396px', height: '223px', objectFit: 'cover' }}
+                      />
+                      <img
+                        src="/spotify/798x449.gif"
+                        alt="Spotify Animation Main"
+                        style={{ width: '798px', height: '449px', objectFit: 'cover' }}
+                      />
+                    </div>
+
+                    {/* Row 2: 603×110 + 430×174 + 243×121 */}
+                    <div style={{ display: 'flex', gap: '2px', marginTop: '2px' }}>
+                      <img
+                        src="/spotify/603x110.gif"
+                        alt="Spotify Animation 2"
+                        style={{ width: '603px', height: '110px', objectFit: 'cover' }}
+                      />
+                      <img
+                        src="/spotify/430x174.gif"
+                        alt="Spotify Animation 3"
+                        style={{ width: '430px', height: '174px', objectFit: 'cover' }}
+                      />
+                      <img
+                        src="/spotify/243x121.gif"
+                        alt="Spotify Animation 4"
+                        style={{ width: '243px', height: '121px', objectFit: 'cover' }}
+                      />
+                    </div>
+
+                    {/* Row 3: Billboard Photos - 301×459 + 495×459 */}
+                    <div style={{ display: 'flex', gap: '2px', marginTop: '2px' }}>
+                      <img
+                        src="/spotify/billboard-1.png"
+                        alt="Spotify Billboard 1"
+                        style={{ width: '301px', height: '459px', objectFit: 'cover' }}
+                      />
+                      <img
+                        src="/spotify/billboard-2.png"
+                        alt="Spotify Billboard 2"
+                        style={{ width: '495px', height: '459px', objectFit: 'cover' }}
+                      />
+                    </div>
                   </div>
                 )}
                 {selectedProject.id === 'kosice' && (
