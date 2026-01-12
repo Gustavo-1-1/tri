@@ -935,12 +935,55 @@ export default function App() {
                   gap: '2px'
                 }}>
                   {selectedProject.id === 'wos' ? (
-                    <>
+                    <div style={{ backgroundColor: '#000', color: '#fff' }}>
+                      {/* 1. Top Grid */}
                       <img
                         src="/Group_6.png"
                         alt={selectedProject.title}
-                        style={{ width: '100%', height: 'auto' }}
+                        style={{ width: '100%', height: 'auto', display: 'block' }}
                       />
+
+                      {/* 2. Text Row 1 */}
+                      <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: '1fr 1fr 1fr',
+                        gap: '20px',
+                        padding: '60px 40px',
+                        alignItems: 'start'
+                      }}>
+                        {/* Left: Title */}
+                        <div style={{
+                          color: '#00BFFF',
+                          fontSize: '14px',
+                          fontWeight: 'bold',
+                          textDecoration: 'underline',
+                          textUnderlineOffset: '4px',
+                          textTransform: 'uppercase'
+                        }}>
+                          {selectedProject.title}
+                        </div>
+
+                        {/* Center: Category */}
+                        <div style={{
+                          textAlign: 'center',
+                          fontSize: '36px',
+                          fontFamily: "'Inter', sans-serif",
+                          fontWeight: '300',
+                          lineHeight: '1.2'
+                        }}>
+                          {selectedProject.category}
+                        </div>
+
+                        {/* Right: Description */}
+                        <div style={{ fontSize: '13px', lineHeight: '1.5' }}>
+                          <span style={{ color: '#00BFFF', marginRight: '8px', verticalAlign: 'middle' }}>●</span>
+                          <span style={{ verticalAlign: 'middle' }}>
+                            {selectedProject.description.replace('WOS is', 'WOS is')} {/* Ensuring render */}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* 3. Middle Grid (Phone + Billboard) */}
                       <div style={{
                         display: 'grid',
                         gridTemplateColumns: '1fr 1fr',
@@ -957,12 +1000,41 @@ export default function App() {
                           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                         />
                       </div>
+
+                      {/* 4. Bottom Grid (Posters) */}
                       <img
                         src="/placa_1.png"
                         alt="WOS Posters"
-                        style={{ width: '100%', height: 'auto' }}
+                        style={{ width: '100%', height: 'auto', display: 'block', marginTop: '2px' }}
                       />
-                    </>
+
+                      {/* 5. Text Row 2 (About + System Note) */}
+                      <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: '1fr 1fr',
+                        gap: '40px',
+                        padding: '80px 40px',
+                        alignItems: 'start'
+                      }}>
+                        {/* Left: About */}
+                        <div style={{ display: 'flex', gap: '30px' }}>
+                          <span style={{ fontWeight: 'bold', fontSize: '13px', width: '40px' }}>about</span>
+                          <p style={{ fontSize: '13px', lineHeight: '1.5', margin: 0, paddingRight: '20px' }}>
+                            {selectedProject.about}
+                          </p>
+                        </div>
+
+                        {/* Right: System Note */}
+                        <div style={{ paddingLeft: '10%' }}>
+                          <div style={{ display: 'flex', gap: '15px' }}>
+                            <span style={{ color: '#00BFFF', fontSize: '10px', marginTop: '4px' }}>●</span>
+                            <span style={{ fontSize: '13px', lineHeight: '1.5' }}>
+                              {selectedProject.systemNote}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   ) : selectedProject.id === 'tina' ? (
                     <div style={{ width: '100%', height: 'auto', backgroundColor: '#000' }}>
                       <img src="/tina/0f1406e6b8ea529f581b812b08ee9f2a3ef066d7.gif" alt="Tina Hero" style={{ width: '100%', height: 'auto', display: 'block' }} />
