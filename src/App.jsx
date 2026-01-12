@@ -1266,7 +1266,7 @@ export default function App() {
 
                 {selectedProject.id === 'spotify' && (
                   <div style={{ backgroundColor: '#000', padding: '0' }}>
-                    {/* Row 1: #2 (white La Cruda) + #1 (blue Éxitos large) */}
+                    {/* Row 1: #2 + #1 */}
                     <div style={{ display: 'flex', gap: '2px' }}>
                       <img
                         src="/spotify/2.gif"
@@ -1280,19 +1280,27 @@ export default function App() {
                       />
                     </div>
 
-                    {/* Row 2: #3 (purple banner) + #6 (black placeholder) */}
+                    {/* Row 2: #3 + #6 */}
                     <div style={{ display: 'flex', gap: '2px', marginTop: '2px' }}>
                       <img
                         src="/spotify/3.gif"
                         alt="La Cruda banner"
                         style={{ width: '603px', height: '110px', objectFit: 'cover' }}
                       />
-                      <div style={{ width: '591px', height: '110px', backgroundColor: '#000' }}></div>
+                      <img
+                        src="/spotify/6.gif"
+                        alt="Spotify content"
+                        style={{ width: '591px', height: '110px', objectFit: 'cover' }}
+                      />
                     </div>
 
-                    {/* Row 3: Black spacer + #4 (blue center) + #5 (white small) */}
+                    {/* Row 3: #7 + #4 + #5 */}
                     <div style={{ display: 'flex', gap: '2px', marginTop: '2px' }}>
-                      <div style={{ width: '430px', height: '174px', backgroundColor: '#000' }}></div>
+                      <img
+                        src="/spotify/7.gif"
+                        alt="Eruca Sativa"
+                        style={{ width: '430px', height: '174px', objectFit: 'cover' }}
+                      />
                       <img
                         src="/spotify/4.gif"
                         alt="Éxitos Argentina"
