@@ -1266,46 +1266,41 @@ export default function App() {
 
                 {selectedProject.id === 'spotify' && (
                   <div style={{ backgroundColor: '#000', padding: '0' }}>
-                    {/* Top Row: La Cruda white (left) + Éxitos blue large (right) */}
+                    {/* Row 1: #2 (white La Cruda) + #1 (blue Éxitos large) */}
                     <div style={{ display: 'flex', gap: '2px' }}>
                       <img
-                        src="/spotify/gif-3.gif"
-                        alt="La Cruda 76 razones"
+                        src="/spotify/gif-2.gif"
+                        alt="La Cruda"
                         style={{ width: '396px', height: '223px', objectFit: 'cover' }}
                       />
                       <img
                         src="/spotify/gif-1.gif"
-                        alt="Éxitos Argentina main"
+                        alt="Éxitos Argentina"
                         style={{ width: '798px', height: '449px', objectFit: 'cover' }}
                       />
                     </div>
 
-                    {/* Middle Row: Purple La Cruda banner (left) + small square (right) */}
+                    {/* Row 2: #3 (purple banner) + #6 (black placeholder) */}
                     <div style={{ display: 'flex', gap: '2px', marginTop: '2px' }}>
                       <img
-                        src="/spotify/gif-2.gif"
+                        src="/spotify/gif-3.gif"
                         alt="La Cruda banner"
                         style={{ width: '603px', height: '110px', objectFit: 'cover' }}
                       />
-                      {/* Small photo placeholder to align with top row */}
                       <div style={{ width: '591px', height: '110px', backgroundColor: '#000' }}></div>
                     </div>
 
-                    {/* Bottom Row: Eruca Sativa (left) + Éxitos blue (center) + La Cruda small (right) */}
+                    {/* Row 3: Black spacer + #4 (blue center) + #5 (white small) */}
                     <div style={{ display: 'flex', gap: '2px', marginTop: '2px' }}>
+                      <div style={{ width: '430px', height: '174px', backgroundColor: '#000' }}></div>
                       <img
                         src="/spotify/gif-4.gif"
-                        alt="Eruca Sativa"
-                        style={{ width: '430px', height: '174px', objectFit: 'cover' }}
-                      />
-                      <img
-                        src="/spotify/gif-5.gif"
                         alt="Éxitos Argentina"
                         style={{ width: '431px', height: '174px', objectFit: 'cover' }}
                       />
                       <img
-                        src="/spotify/gif-6.gif"
-                        alt="La Cruda small"
+                        src="/spotify/gif-5.gif"
+                        alt="La Cruda"
                         style={{ width: '333px', height: '174px', objectFit: 'cover' }}
                       />
                     </div>
@@ -1314,12 +1309,12 @@ export default function App() {
                     <div style={{ display: 'flex', gap: '2px', marginTop: '2px' }}>
                       <img
                         src="/spotify/billboard-1.png"
-                        alt="Spotify Billboard 1"
+                        alt="Billboard Buenos Aires"
                         style={{ width: '50%', height: 'auto', objectFit: 'cover' }}
                       />
                       <img
                         src="/spotify/billboard-2.png"
-                        alt="Spotify Billboard 2"
+                        alt="Billboard Street"
                         style={{ width: '50%', height: 'auto', objectFit: 'cover' }}
                       />
                     </div>
