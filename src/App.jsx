@@ -193,7 +193,7 @@ export default function App() {
           height: '100px', // Larger size
           width: 'auto',
           display: 'block',
-          filter: darkMode ? 'invert(1)' : 'none',
+          filter: darkMode ? 'none' : 'invert(1)',
           marginBottom: '-10px' // Optical adjustment for line-height/padding
         }}
       />
