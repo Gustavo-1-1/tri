@@ -1090,83 +1090,61 @@ export default function App() {
                       </div>
                     )}
                 </div>
-                {/* Project Info */}
-                <div style={{
-                  padding: '60px 40px',
-                  display: 'grid',
-                  gridTemplateColumns: '200px 1fr 1fr',
-                  gap: '60px',
-                  maxWidth: '1400px'
-                }}>
-                  <div>
-                    <div style={{
-                      color: selectedProject.id === 'wos' ? '#E63946' : textColor,
-                      fontSize: '13px',
-                      fontWeight: 500,
-                      marginBottom: '10px'
-                    }}>
-                      {selectedProject.title}
-                    </div>
-                  </div>
-
-                  <div>
-                    <div style={{
-                      fontSize: '28px',
-                      fontWeight: 300,
-                      lineHeight: 1.4,
-                      marginBottom: '30px'
-                    }}>
-                      {selectedProject.category}
-                    </div>
-
-                    {selectedProject.about && (
-                      <div style={{ marginTop: '40px' }}>
-                        <div style={{
-                          fontSize: '13px',
-                          fontWeight: 500,
-                          marginBottom: '15px'
-                        }}>
-                          about
-                        </div>
-                        <p style={{
-                          fontSize: '14px',
-                          lineHeight: 1.7,
-                          opacity: 0.85
-                        }}>
-                          {selectedProject.about}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-
-                  <div>
-                    <div style={{
-                      display: 'flex',
-                      alignItems: 'flex-start',
-                      gap: '15px'
-                    }}>
+                {/* Project Info - Exclude WOS as it has custom layout */}
+                {selectedProject.id !== 'wos' && (
+                  <div style={{
+                    padding: '60px 40px',
+                    display: 'grid',
+                    gridTemplateColumns: '200px 1fr 1fr',
+                    gap: '60px',
+                    maxWidth: '1400px'
+                  }}>
+                    <div>
                       <div style={{
-                        width: '8px',
-                        height: '8px',
-                        borderRadius: '50%',
-                        backgroundColor: selectedProject.id === 'wos' ? '#00D4FF' : textColor,
-                        marginTop: '6px'
-                      }} />
-                      <p style={{
-                        fontSize: '14px',
-                        lineHeight: 1.7,
-                        opacity: 0.85
+                        color: selectedProject.id === 'wos' ? '#E63946' : textColor,
+                        fontSize: '13px',
+                        fontWeight: 500,
+                        marginBottom: '10px'
                       }}>
-                        {selectedProject.description}
-                      </p>
+                        {selectedProject.title}
+                      </div>
                     </div>
 
-                    {selectedProject.systemNote && (
+                    <div>
+                      <div style={{
+                        fontSize: '28px',
+                        fontWeight: 300,
+                        lineHeight: 1.4,
+                        marginBottom: '30px'
+                      }}>
+                        {selectedProject.category}
+                      </div>
+
+                      {selectedProject.about && (
+                        <div style={{ marginTop: '40px' }}>
+                          <div style={{
+                            fontSize: '13px',
+                            fontWeight: 500,
+                            marginBottom: '15px'
+                          }}>
+                            about
+                          </div>
+                          <p style={{
+                            fontSize: '14px',
+                            lineHeight: 1.7,
+                            opacity: 0.85
+                          }}>
+                            {selectedProject.about}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+
+                    <div>
                       <div style={{
                         display: 'flex',
                         alignItems: 'flex-start',
-                        gap: '15px',
-                        marginTop: '30px'
+                        gap: '15px'
                       }}>
                         <div style={{
                           width: '8px',
@@ -1180,12 +1158,36 @@ export default function App() {
                           lineHeight: 1.7,
                           opacity: 0.85
                         }}>
-                          {selectedProject.systemNote}
+                          {selectedProject.description}
                         </p>
                       </div>
-                    )}
+
+                      {selectedProject.systemNote && (
+                        <div style={{
+                          display: 'flex',
+                          alignItems: 'flex-start',
+                          gap: '15px',
+                          marginTop: '30px'
+                        }}>
+                          <div style={{
+                            width: '8px',
+                            height: '8px',
+                            borderRadius: '50%',
+                            backgroundColor: selectedProject.id === 'wos' ? '#00D4FF' : textColor,
+                            marginTop: '6px'
+                          }} />
+                          <p style={{
+                            fontSize: '14px',
+                            lineHeight: 1.7,
+                            opacity: 0.85
+                          }}>
+                            {selectedProject.systemNote}
+                          </p>
+                        </div>
+                      )}
+                    </div>
                   </div>
-                </div>
+                )}
 
                 {selectedProject.id === 'tina' && (
                   <div style={{ backgroundColor: '#000', color: '#fff' }}>
