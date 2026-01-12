@@ -176,11 +176,11 @@ export default function App() {
   const RenderFooter = () => (
     <footer style={{
       width: '100%',
-      padding: '40px',
+      padding: '40px 40px 20px 40px', // Adjusted padding for bottom alignment visual
       borderTop: `1px solid ${darkMode ? '#333' : '#ddd'}`,
       display: 'flex',
       justifyContent: 'space-between',
-      alignItems: 'center',
+      alignItems: 'flex-end', // Align bottom
       backgroundColor: bgColor,
       color: textColor,
       position: 'relative',
@@ -190,10 +190,11 @@ export default function App() {
         src="/tri-monograma_1.png"
         alt="TRI"
         style={{
-          height: '48px',
+          height: '100px', // Larger size
           width: 'auto',
           display: 'block',
-          filter: darkMode ? 'invert(1)' : 'none'
+          filter: darkMode ? 'invert(1)' : 'none',
+          marginBottom: '-10px' // Optical adjustment for line-height/padding
         }}
       />
 
