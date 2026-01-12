@@ -15,7 +15,7 @@ const projects = [
   },
   {
     id: 'spotify',
-    title: 'SPOTIFY ARGENTINA',
+    title: 'Spotify',
     category: 'Animation Design',
     description: 'Developed 2D animations for various Spotify projects featured in public spaces across Buenos Aires. Each piece was created in line with Spotify\'s core values and visual identity. Projects included La Cruda by Migue Granados, the Éxitos Argentina playlist, among others.',
     images: ['spotify'],
@@ -1140,7 +1140,7 @@ export default function App() {
                   }}>
                     <div>
                       <div style={{
-                        color: selectedProject.id === 'wos' ? '#E63946' : textColor,
+                        color: selectedProject.id === 'spotify' ? '#1DB954' : textColor,
                         fontSize: '13px',
                         fontWeight: 500,
                         marginBottom: '10px'
@@ -1189,7 +1189,7 @@ export default function App() {
                           width: '8px',
                           height: '8px',
                           borderRadius: '50%',
-                          backgroundColor: selectedProject.id === 'wos' ? '#00D4FF' : textColor,
+                          backgroundColor: selectedProject.id === 'spotify' ? '#1DB954' : (selectedProject.id === 'wos' ? '#00D4FF' : textColor),
                           marginTop: '6px'
                         }} />
                         <p style={{
@@ -1266,40 +1266,55 @@ export default function App() {
 
                 {selectedProject.id === 'spotify' && (
                   <div style={{ backgroundColor: '#000', padding: '0' }}>
-                    {/* Row 1: 396×223 + 798×449 */}
+                    {/* Row 1: gif-3 (396×223) + gif-1 (798×449) */}
                     <div style={{ display: 'flex', gap: '2px' }}>
                       <img
-                        src="/spotify/396x223.gif"
-                        alt="Spotify Animation 1"
+                        src="/spotify/gif-3.gif"
+                        alt="Spotify Animation"
                         style={{ width: '396px', height: '223px', objectFit: 'cover' }}
                       />
                       <img
-                        src="/spotify/798x449.gif"
-                        alt="Spotify Animation Main"
+                        src="/spotify/gif-1.gif"
+                        alt="Spotify Main Animation"
                         style={{ width: '798px', height: '449px', objectFit: 'cover' }}
                       />
                     </div>
 
-                    {/* Row 2: 603×110 + 430×174 + 243×121 */}
-                    <div style={{ display: 'flex', gap: '2px', marginTop: '2px' }}>
+                    {/* Row 2: gif-2 (603×110) solo en izquierda */}
+                    <div style={{ display: 'flex', gap: '2px', marginTop: '2px', justifyContent: 'flex-start' }}>
                       <img
-                        src="/spotify/603x110.gif"
-                        alt="Spotify Animation 2"
+                        src="/spotify/gif-2.gif"
+                        alt="Spotify Animation"
                         style={{ width: '603px', height: '110px', objectFit: 'cover' }}
                       />
+                      {/* Columna derecha con gif-4 y gif-5 apilados */}
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                        <img
+                          src="/spotify/gif-4.gif"
+                          alt="Spotify Animation"
+                          style={{ width: '430px', height: '174px', objectFit: 'cover' }}
+                        />
+                        <div style={{ display: 'flex', gap: '2px' }}>
+                          <div style={{ width: '187px', backgroundColor: '#000' }}></div>
+                          <img
+                            src="/spotify/gif-6.gif"
+                            alt="Spotify Animation"
+                            style={{ width: '243px', height: '121px', objectFit: 'cover' }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Row 3: gif-5 abajo con espaciador */}
+                    <div style={{ display: 'flex', gap: '2px', marginTop: '2px', justifyContent: 'flex-end' }}>
                       <img
-                        src="/spotify/430x174.gif"
-                        alt="Spotify Animation 3"
-                        style={{ width: '430px', height: '174px', objectFit: 'cover' }}
-                      />
-                      <img
-                        src="/spotify/243x121.gif"
-                        alt="Spotify Animation 4"
-                        style={{ width: '243px', height: '121px', objectFit: 'cover' }}
+                        src="/spotify/gif-5.gif"
+                        alt="Spotify Animation"
+                        style={{ width: '431px', height: '62px', objectFit: 'cover' }}
                       />
                     </div>
 
-                    {/* Row 3: Billboard Photos - 301×459 + 495×459 */}
+                    {/* Row 4: Billboard Photos */}
                     <div style={{ display: 'flex', gap: '2px', marginTop: '2px' }}>
                       <img
                         src="/spotify/billboard-1.png"
