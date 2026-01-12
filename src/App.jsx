@@ -190,11 +190,11 @@ export default function App() {
         src="/tri-monograma_1.png"
         alt="TRI"
         style={{
-          height: '100px', // Larger size
+          height: '42px',
           width: 'auto',
           display: 'block',
           filter: darkMode ? 'none' : 'invert(1)',
-          marginBottom: '-10px' // Optical adjustment for line-height/padding
+          marginBottom: '0'
         }}
       />
 
