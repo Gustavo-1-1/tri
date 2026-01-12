@@ -954,8 +954,9 @@ export default function App() {
                         {/* Left: Title */}
                         <div style={{
                           color: '#00BFFF',
-                          fontSize: '14px',
-                          fontWeight: 'bold',
+                          fontFamily: "'Archivo', sans-serif",
+                          fontSize: '15px',
+                          fontWeight: '400',
                           textDecoration: 'underline',
                           textUnderlineOffset: '4px',
                           textTransform: 'uppercase'
@@ -966,19 +967,25 @@ export default function App() {
                         {/* Center: Category */}
                         <div style={{
                           textAlign: 'center',
-                          fontSize: '36px',
-                          fontFamily: "'Inter', sans-serif",
-                          fontWeight: '300',
-                          lineHeight: '1.2'
+                          fontFamily: "'Space Grotesk', sans-serif",
+                          fontSize: '30px',
+                          fontWeight: '400',
+                          lineHeight: '1',
+                          color: '#fff'
                         }}>
                           {selectedProject.category}
                         </div>
 
                         {/* Right: Description */}
-                        <div style={{ fontSize: '13px', lineHeight: '1.5' }}>
+                        <div style={{
+                          fontFamily: "'Archivo', sans-serif",
+                          fontSize: '15px',
+                          lineHeight: '1.2',
+                          color: '#fff'
+                        }}>
                           <span style={{ color: '#00BFFF', marginRight: '8px', verticalAlign: 'middle' }}>●</span>
                           <span style={{ verticalAlign: 'middle' }}>
-                            {selectedProject.description.replace('WOS is', 'WOS is')} {/* Ensuring render */}
+                            {selectedProject.description}
                           </span>
                         </div>
                       </div>
@@ -1018,8 +1025,8 @@ export default function App() {
                       }}>
                         {/* Left: About */}
                         <div style={{ display: 'flex', gap: '30px' }}>
-                          <span style={{ fontWeight: 'bold', fontSize: '13px', width: '40px' }}>about</span>
-                          <p style={{ fontSize: '13px', lineHeight: '1.5', margin: 0, paddingRight: '20px' }}>
+                          <span style={{ fontFamily: "'Archivo', sans-serif", fontWeight: '700', fontSize: '15px', width: '50px' }}>about</span>
+                          <p style={{ fontFamily: "'Archivo', sans-serif", fontSize: '15px', lineHeight: '1.2', margin: 0, paddingRight: '20px' }}>
                             {selectedProject.about}
                           </p>
                         </div>
@@ -1028,7 +1035,7 @@ export default function App() {
                         <div style={{ paddingLeft: '10%' }}>
                           <div style={{ display: 'flex', gap: '15px' }}>
                             <span style={{ color: '#00BFFF', fontSize: '10px', marginTop: '4px' }}>●</span>
-                            <span style={{ fontSize: '13px', lineHeight: '1.5' }}>
+                            <span style={{ fontFamily: "'Archivo', sans-serif", fontSize: '15px', lineHeight: '1.2' }}>
                               {selectedProject.systemNote}
                             </span>
                           </div>
