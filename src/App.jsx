@@ -1094,7 +1094,7 @@ export default function App() {
                       <div style={{ width: '100%', height: 'auto', backgroundColor: '#e8e800' }}>
                         <img src="/yuki/f0a03ec6dd0e7dae151932c76af58cf42840e881.jpg" alt="Yuki Header" style={{ width: '100%', height: 'auto', display: 'block' }} />
                       </div>
-                    ) : (
+                    ) : selectedProject.id === 'spotify' ? null : (
                       <div style={{
                         height: '60vh',
                         background: getProjectImage(selectedProject),
@@ -1108,8 +1108,8 @@ export default function App() {
                       </div>
                     )}
                 </div>
-                {/* Project Info - Exclude WOS as it has custom layout */}
-                {selectedProject.id !== 'wos' && (
+                {/* Project Info - Exclude WOS and Spotify as they have custom layouts */}
+                {selectedProject.id !== 'wos' && selectedProject.id !== 'spotify' && (
                   <div style={{
                     padding: '60px 40px',
                     display: 'grid',
@@ -1290,6 +1290,63 @@ export default function App() {
                         alt="La Cruda"
                         style={{ width: '333px', height: '174px', objectFit: 'cover' }}
                       />
+                    </div>
+
+                    {/* Text Section - After GIFs, Before Billboards */}
+                    <div style={{
+                      padding: '60px 40px',
+                      display: 'grid',
+                      gridTemplateColumns: '200px 1fr 1fr',
+                      gap: '60px',
+                      maxWidth: '1400px',
+                      backgroundColor: '#000'
+                    }}>
+                      <div>
+                        <div style={{
+                          color: '#1DB954',
+                          fontSize: '13px',
+                          fontWeight: 500,
+                          marginBottom: '10px'
+                        }}>
+                          {selectedProject.title}
+                        </div>
+                      </div>
+
+                      <div>
+                        <div style={{
+                          fontSize: '28px',
+                          fontWeight: 300,
+                          lineHeight: 1.4,
+                          marginBottom: '30px',
+                          color: '#fff'
+                        }}>
+                          {selectedProject.category}
+                        </div>
+                      </div>
+
+                      <div>
+                        <div style={{
+                          display: 'flex',
+                          alignItems: 'flex-start',
+                          gap: '15px'
+                        }}>
+                          <div style={{
+                            width: '8px',
+                            height: '8px',
+                            borderRadius: '50%',
+                            backgroundColor: '#1DB954',
+                            marginTop: '6px'
+                          }} />
+                          <p style={{
+                            fontSize: '14px',
+                            lineHeight: 1.7,
+                            opacity: 0.85,
+                            color: '#fff'
+                          }}>
+                            {selectedProject.description}
+                          </p>
+                        </div>
+                      </div>
                     </div>
 
                     {/* Billboard Photos */}
