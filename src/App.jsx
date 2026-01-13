@@ -1082,8 +1082,69 @@ export default function App() {
                       </div>
                     </div>
                   ) : selectedProject.id === 'tina' ? (
-                    <div style={{ width: '100%', height: 'auto', backgroundColor: '#000' }}>
-                      <img src="/tina/0f1406e6b8ea529f581b812b08ee9f2a3ef066d7.gif" alt="Tina Hero" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                    <div style={{ width: '100%', height: 'auto', backgroundColor: '#000', position: 'relative' }}>
+                      <img
+                        src="/tina/0f1406e6b8ea529f581b812b08ee9f2a3ef066d7.gif"
+                        alt="Tina Hero"
+                        style={{ width: '100%', height: 'auto', display: 'block' }}
+                      />
+
+                      {/* Top Text Overlays */}
+                      <div style={{
+                        position: 'absolute',
+                        top: '20px',
+                        left: '20px',
+                        fontFamily: 'Helvetica, Arial, sans-serif',
+                        fontWeight: 'bold',
+                        fontSize: '40px',
+                        letterSpacing: '0',
+                        color: '#000'
+                      }}>
+                        LA<span style={{ color: '#FFD700' }}>IMPERMANENCIA</span>
+                      </div>
+
+                      <div style={{
+                        position: 'absolute',
+                        top: '20px',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        fontFamily: 'Helvetica, Arial, sans-serif',
+                        fontWeight: 'bold',
+                        fontSize: '40px',
+                        letterSpacing: '0',
+                        color: '#000'
+                      }}>
+                        [DEL<span style={{ color: '#FFD700' }}>VÍNCULO</span>]
+                      </div>
+
+                      <div style={{
+                        position: 'absolute',
+                        top: '20px',
+                        right: '20px',
+                        fontFamily: 'Helvetica, Arial, sans-serif',
+                        fontWeight: 'bold',
+                        fontSize: '40px',
+                        letterSpacing: '0',
+                        color: '#000'
+                      }}>
+                        DELAS<span style={{ color: '#FFD700' }}>COSAS</span>
+                      </div>
+
+                      {/* Bottom Large Title */}
+                      <div style={{
+                        position: 'absolute',
+                        bottom: '50%',
+                        left: '50%',
+                        transform: 'translate(-50%, 50%)',
+                        fontFamily: 'Helvetica, Arial, sans-serif',
+                        fontWeight: 'bold',
+                        fontSize: '187px',
+                        letterSpacing: '0',
+                        whiteSpace: 'nowrap'
+                      }}>
+                        <span style={{ color: '#000' }}>AGUSTINA </span>
+                        <span style={{ color: '#4169E1' }}>CHALUPOWICZ</span>
+                      </div>
                     </div>
                   ) : (selectedProject.id === 'kosice' || selectedProject.id === 'calm' || selectedProject.id === 'oddmami' || selectedProject.id === 'bosque') ? null :
                     selectedProject.id === 'margot' ? (
