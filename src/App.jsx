@@ -1082,13 +1082,63 @@ export default function App() {
                       </div>
                     </div>
                   ) : selectedProject.id === 'tina' ? (
-                    <div style={{ width: '100%', height: 'auto', backgroundColor: '#000' }}>
-                      <img
-                        src="/tina/0f1406e6b8ea529f581b812b08ee9f2a3ef066d7.gif"
-                        alt="Tina Hero"
-                        style={{ width: '100%', height: 'auto', display: 'block' }}
-                      />
+                    <div style={{ width: '100%', height: 'auto', backgroundColor: '#000', position: 'relative' }}>
+                      {/* Main Header Container - Horizontal Aspect Ratio 1280x797 */}
+                      <div style={{
+                        width: '100%',
+                        paddingTop: '62.26%', /* 797 / 1280 * 100 */
+                        position: 'relative',
+                        overflow: 'hidden'
+                      }}>
+                        {/* Image - Rotated 90deg to correct orientation */}
+                        <img
+                          src="/tina/01-ac-buenavibra-1280x797.jpg"
+                          alt="Tina Buenavibra"
+                          style={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            /*
+                               Image is vertical 797x1280 physically (implied by previous vertical rendering).
+                               We rotate it 90deg to make it horizontal 1280x797.
+                               To fit:
+                               - Width (pre-rotation) = Container Height = 62.26% of Container Width
+                               - Height (pre-rotation) = Container Width = 160.6% of Container Height (or 100% of Width)
+                               Let's use container width % for robust scaling.
+                               Use 'height: 100vw' style logic but relative to container.
+                            */
+                            width: '62.26%', /* Matches container HEIGHT */
+                            height: '160.6%', /* Matches container WIDTH */
+                            transform: 'translate(-50%, -50%) rotate(90deg)',
+                            objectFit: 'cover'
+                          }}
+                        />
+                      </div>
+
+                      {/* Large Title Text Overlay - Centered */}
+                      <div style={{
+                        position: 'absolute',
+                        top: '49%',
+                        left: '50%',
+                        transform: 'translate(-50%, -50%)',
+                        width: '100%',
+                        textAlign: 'center',
+                        zIndex: 10,
+                        pointerEvents: 'none'
+                      }}>
+                        <span style={{
+                          fontFamily: "'Helvetica', 'Arial', sans-serif",
+                          fontWeight: '400', /* Regular */
+                          fontSize: 'clamp(30px, 9.5vw, 116px)',
+                          letterSpacing: '-2px',
+                          color: '#000',
+                          lineHeight: 1
+                        }}>
+                          AGUSTINA CHALUPOWICZ<span style={{ color: '#4169E1' }}></span>
+                        </span>
+                      </div>
                     </div>
+
                   ) : (selectedProject.id === 'kosice' || selectedProject.id === 'calm' || selectedProject.id === 'oddmami' || selectedProject.id === 'bosque') ? null :
                     selectedProject.id === 'margot' ? (
                       <div style={{ width: '100%', height: 'auto', backgroundColor: '#fff' }}>
@@ -1213,10 +1263,16 @@ export default function App() {
 
                 {selectedProject.id === 'tina' && (
                   <div style={{ backgroundColor: '#000', color: '#fff' }}>
-                    {/* Exhibition Image */}
-                    <div style={{ position: 'relative' }}>
-                      <img src="/tina/a2f21bae576847a35e86f89655c68e106172b053.jpg" style={{ width: '100%', height: 'auto', display: 'block' }} />
-                      <div style={{ textAlign: 'right', fontSize: '10px', padding: '10px 40px', color: '#ccc', fontFamily: 'Arial, sans-serif' }}>Exhibited at Festival Buena Vibra</div>
+                    {/* Exhibition Photo: 2-864x968.jpg */}
+                    <div style={{ position: 'relative', marginTop: '2px' }}>
+                      <img
+                        src="/tina/2-864x968.jpg"
+                        alt="Exhibition Buena Vibra"
+                        style={{ width: '100%', height: 'auto', display: 'block' }}
+                      />
+                      <div style={{ textAlign: 'right', fontSize: '10px', padding: '10px 40px', color: '#ccc', fontFamily: 'Arial, sans-serif' }}>
+                        Exhibited at Festival Buena Vibra
+                      </div>
                     </div>
 
                     {/* About Text */}
@@ -1234,16 +1290,19 @@ export default function App() {
                       </p>
                     </div>
 
-                    {/* 2x2 Grid */}
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0' }}>
-                      <img src="/tina/58682259c058a77505461d8749f17242f39cd0f2.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                      <img src="/tina/a4ea9e169ae6a278a1916db486b2d2424bd1dc17.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                      <img src="/tina/e55c9e459322ae3aeee9e4e89952aae3da65f59a.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                      <img src="/tina/272e2055b7b2842215016fff13b9eae868cc7987.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    {/* 2x2 Grid: Artwork N2, N3, N4, tela */}
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2px' }}>
+                      <img src="/tina/Artwork-N2_AC_tela-648x640.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Artwork N2" />
+                      <img src="/tina/Artwork-N3_AC_tela-648x640.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Artwork N3" />
+                      <img src="/tina/Artwork-N4_AC_tela-648x640.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Artwork N4" />
+                      <img src="/tina/tela-648x640.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Tela" />
                     </div>
 
-                    {/* Strip Image */}
-                    <img src="/tina/1abd2eb40e7503e85440aa41e375b3d1e175c2e2.jpg" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                    {/* Bottom 2x2 Grid: 4 sections from Artwork-N4 (920x318, 319x318, 321x318, 920x318) */}
+                    {/* Replacement for the intended GIF: Single Poster Image */}
+                    <div style={{ marginTop: '2px' }}>
+                      <img src="/tina/bv-replacement.png" style={{ width: '100%', height: 'auto', display: 'block' }} alt="Tina Poster Concept" />
+                    </div>
                   </div>
                 )}
 
@@ -1511,8 +1570,9 @@ export default function App() {
               </>
             )}
           </section>
-        )}
-      </div>
+        )
+        }
+      </div >
     </div >
   );
 }
